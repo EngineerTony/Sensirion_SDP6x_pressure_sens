@@ -14,7 +14,10 @@ Use Serial Monitor (or Ctrl+Shft+M) to see the output
 
 ## Using I2C
 **SDP600 series sensors run on 3.3V!! not 5**
-Don't worry the cool thing about I2C is that as long as the lowest voltage of any connected device (in this case the sensor with 3.3v) is higher than the Arduino's HIGH level (~2.5V) then it is ok to connect the sensor to the 3.3V pins and use 3.3V as the voltage for I2C.  This means that you can use the lower voltage sensors on a higher voltage Arduino.
+
+Don't worry the cool thing about I2C is that as long as the lowest voltage of any connected device (in this case the sensor with 3.3v) is higher than the Arduino's HIGH level (~2.5V) then it is ok to connect the sensor to the 3.3V pins and use 3.3V as the voltage for I2C.
+This means that you can use the lower voltage sensors on a higher voltage Arduino.
+
 JUST BE CAREFUL YOU DON'T CONNECT THE SENSOR TO 5V =D
 
 The sensors use the wire (I2C) communication protocal so you will need to connect the SDA (data) and SCL (clock) wires to the correct analogue pins on your Arduino.
@@ -30,6 +33,7 @@ On a NANO the pins are:
   * the "pull up" resistors connect the SCL and SDA pins to the +3.3V pin on your arduino
   * they will ensure that the SDA and SCL wires stay at HIGH (3.3V) when not in use making sure the sensors work properly
   * a 10uF capacitor between GND and 3.3V will also help smooth out any voltage bumps
+
 ### Other boards
 * Uno
   * A4 (SDA)
