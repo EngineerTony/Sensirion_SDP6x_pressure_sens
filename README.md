@@ -24,8 +24,8 @@ The sensors use the wire (I2C) communication protocal so you will need to connec
 See [I2C/Wire](https://www.arduino.cc/en/Reference/Wire) library on Arcuino.cc for more information about which pins to use.
 ### NANO
 On a NANO the pins are: 
-* A4 for SCL
-* A5 for SDA
+* A4 for SDA
+* A5 for SCL
 * connect the PWR/+V sensor pin to 3.3V pin
 * connect the GND/0V sensor pin to GND pin
 * you should also connect a "pull up" resistor to the SDA and SCL connections
