@@ -49,5 +49,5 @@ On a NANO the pins are:
   * 21 (SCL) or SCL1
  
 ### Fritzing diagram of connections
-Comming soon
+![Connection Diagram](/I2C_sensor_connections.JPG)
 
