@@ -38,6 +38,12 @@ typedef enum {
 } PRES_SENSOR_P;
 
 typedef enum {
+	NO_ERROR = 0,
+	CHECKSUM_ERROR = 0X04,
+	TIMEOUT_ERROR = 0X08
+} PRES_SENSOR_ERROR;
+
+typedef enum {
    ePresHoldCmd = 0xF1, //command to trigger a pressure measurement
    eSoftReset = 0xFE,   //command: soft reset
    eReadUserReg = 0xE5, //command: read advanced user register
@@ -58,10 +64,13 @@ typedef enum{
 class SDP6xClass
 {
   private:
-  int16_t readSensor(uint8_t command);
-
+    bool readSensor(uint8_t command, uint16_t* res);
+    PRES_SENSOR_ERROR CheckCrc(uint8_t data[], uint8_t nbrOfBytes, uint8_t checksum);
+	void writeSensor(uint16_t data);
+  
   public:
     float GetPressureDiff(void);
+	void SetSensorResolution(etSensorResolutions resolution);
 };
 
 extern SDP6xClass SDP6x;
