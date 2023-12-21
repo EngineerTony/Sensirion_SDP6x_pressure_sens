@@ -15,8 +15,9 @@ Use Serial Monitor (or Ctrl+Shft+M) to see the output
 ## Using I2C
 **SDP600 series sensors run on 3.3V!! not 5**
 
-Don't worry the cool thing about I2C is that as long as the lowest voltage of any connected device (in this case the sensor with 3.3v) is higher than the Arduino's HIGH level (~2.5V) then it is ok to connect the sensor to the 3.3V pins and use 3.3V as the voltage for I2C.
-This means that you can use the lower voltage sensors on a higher voltage Arduino.
+Arduino UNO (Microchip ATMEGA328x):
+Two wire interface (I2C) requires an input voltage of 0.7*VCC in order to register a HIGH input pin (see ATMEGA328x datasheet section "... Two-wire Serial Interface Characteristics").
+If you are using a 5V Arduino PCB, it is strongly recommended that you install a bidirectional Voltage level converter 5V/3.3V. For example: https://www.sparkfun.com/products/12009
 
 JUST BE CAREFUL YOU DON'T CONNECT THE SENSOR TO 5V =D
 
